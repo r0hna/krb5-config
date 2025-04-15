@@ -33,4 +33,4 @@
     Server not found in Kerberos database
     evil-winrm dmalloc(): unaligned fastbin chunk detected
     evil-winrm eRR-S-PRINCIPAL-UNKNOWN
-    Evil-winrm error on connection to host
+    evil-winrm error on connection to host
