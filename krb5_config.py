@@ -26,7 +26,7 @@ def get_config(domain_fqdn: str, dc_name: str):
 
 [realms]
         {domain_fqdn.upper()} = {{
-                kdc = {dc_name.lower()}.{domain_fqdn.lower()}:88
+                kdc = {dc_name.lower()}.{domain_fqdn.lower()}
                 admin_server = {dc_name.lower()}.{domain_fqdn.lower()}
                 default_domain = {domain_fqdn.lower()}
         }}
@@ -47,7 +47,7 @@ def request_root():
 def main():
     parser = argparse.ArgumentParser(description="Configure krb5.conf for evil-winrm")
     parser.add_argument("domain_fqdn", help="Domain FQDN")
-    parser.add_argument("dc_name", help="Domain Controller Name")
+    parser.add_argument("dc_name", help="Domain Controller hostname")
     args = parser.parse_args()
 
     request_root()
@@ -56,7 +56,7 @@ def main():
     print("[*] Configuration Data:")
     print(config_data)
 
-    confirm = input("\n[!] Above Configuration will overwrite /etc/krb5.conf, are you sure? [y/N] ")
+    confirm = input("\n[!] Above Configuration will overwrite /etc/krb5.conf, no cry afterwards? [y/N] ")
     if confirm.lower() != "y":
         print("[!] Aborting")
         sys.exit(1)
@@ -64,7 +64,7 @@ def main():
     with open("/etc/krb5.conf", "w") as f:
         f.write(config_data)
 
-    print("[+] /etc/krb5.conf has been configured")
+    print("[+] /etc/krb5.conf has been configured in you system.")
 
 
 if __name__ == "__main__":
