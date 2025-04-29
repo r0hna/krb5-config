@@ -28,10 +28,12 @@
     timedatectl set-ntp false
     ntpdate dc01.example.com
 
-
 ### 💀Common Issues:
     Server not found in Kerberos database
     evil-winrm dmalloc(): unaligned fastbin chunk detected
     evil-winrm eRR-S-PRINCIPAL-UNKNOWN
     evil-winrm error on connection to host
     Error: An error of type GSSAPI::GssApiError happened, message is gss_init_sec_context did not return GSS_S_COMPLETE: Unspecified GSS failure.  Minor code may provide more information Matching credential not found
+
+Example:
+> evil-winrm -r example.htb -i dc01.example.htb
