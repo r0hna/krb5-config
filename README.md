@@ -1,4 +1,4 @@
-## Configure krb5 (kerberos auth) to play HackTheBox labs.
+## Configure krb5 (kerberos auth) to play AD labs.
 
   **⚠️Kerberos is very sensitive to time and DNS configuration.**
 
