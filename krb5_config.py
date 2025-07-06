@@ -21,8 +21,13 @@ import argparse
 def get_config(domain_fqdn: str, dc_name: str):
     return f"""[libdefaults]
         default_realm = {domain_fqdn.upper()}
-        dns_lookup_realm = true
-    	dns_lookup_kdc = true
+        dns_lookup_realm = false
+        dns_lookup_kdc = false
+        ticket_lifetime = 24h
+        forwardable = true
+        default_tkt_enctypes = aes256-cts-hmac-sha1-96 aes128-cts-hmac-sha1-96
+        default_tgs_enctypes = aes256-cts-hmac-sha1-96 aes128-cts-hmac-sha1-96
+        permitted_enctypes = aes256-cts-hmac-sha1-96 aes128-cts-hmac-sha1-96
 
 [realms]
         {domain_fqdn.upper()} = {{
@@ -45,7 +50,7 @@ def request_root():
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Configure krb5.conf for evil-winrm")
+    parser = argparse.ArgumentParser(description="Configure krb5.conf for kerberos authentication.")
     parser.add_argument("domain_fqdn", help="Domain FQDN")
     parser.add_argument("dc_name", help="Domain Controller hostname")
     args = parser.parse_args()
