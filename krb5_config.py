@@ -19,7 +19,7 @@ import argparse
 
 
 def get_config(domain_fqdn: str, dc_name: str):
-    return f"""[libdefault]
+    return f"""[libdefaults]
         default_realm = {domain_fqdn.upper()}
         dns_lookup_realm = true
     	dns_lookup_kdc = true
