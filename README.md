@@ -18,6 +18,8 @@
 
 ### Use domain name instead IP:
     ✔️evil-winrm -r dc01.example.com -i exampel.com
+                         OR
+    ✔️evil-winrm -r example.com -i dc01.exampel.com
     ❌evil-winrm -r <dc_ip> -i exampel.com
     
 ### Case sensitive:
