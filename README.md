@@ -17,10 +17,15 @@
     nameserver <dc_ip>
 
 ### Use domain name instead IP:
-    ✔️evil-winrm -r dc01.example.com -i exampel.com
+    ✔️evil-winrm -r dc01.example.com -i example.com
                          OR
-    ✔️evil-winrm -r example.com -i dc01.exampel.com
-    ❌evil-winrm -r <dc_ip> -i exampel.com
+    ✔️evil-winrm -r example.com -i dc01.example.com
+    ❌evil-winrm -r <dc_ip> -i example.com
+
+> Error: `Server not found in the kerberos database`.
+
+    ✔️impacket-psexec -k -no-pass forest.htb/admin@**forest**
+    ❌impacket-psexec -k -no-pass forest.htb/admin@10.10.11.145
     
 ### Case sensitive:
     ✔️rosa@EXAMPLE.COM
