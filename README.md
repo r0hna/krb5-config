@@ -10,8 +10,8 @@
 ### /etc/hosts config:
   > DNS host order matters
 
-    ✔️<dc_ip>  dc01.example.com exampel.com dc01
-    ❌<dc_ip>  example.com dc01.exampel.com dc01
+    ✔️<dc_ip>  dc01.example.com example.com dc01
+    ❌<dc_ip>  example.com dc01.example.com dc01
 
 ### /etc/resolv.conf:
     nameserver <dc_ip>
