@@ -38,13 +38,11 @@ def get_config(domain_fqdn: str, dc_name: str):
         .{domain_fqdn.lower()} = {domain_fqdn.upper()}
 """
 
-
 def request_root():
     if os.geteuid() != 0:
         print("[*] This script must be run as root")
         args = ["sudo", sys.executable] + sys.argv + [os.environ]
         os.execlpe("sudo", *args)
-
 
 def main():
     parser = argparse.ArgumentParser(description="Configure krb5.conf for kerberos authentication.")
@@ -67,7 +65,6 @@ def main():
         f.write(config_data)
 
     print("[+] /etc/krb5.conf has been configured in you system.")
-
 
 if __name__ == "__main__":
     main()
