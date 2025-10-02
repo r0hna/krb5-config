@@ -3,7 +3,7 @@
   **⚠️Kerberos is very sensitive to time and DNS configuration.**
 
 
-### Recommended:
+ > [!NOTE]
   > Use latest version of evil-winrm, impacket-* and other tools.
 
 
